@@ -1,0 +1,23 @@
+s1: c b a
+
+
+s2: 3 2 1 c b a
+
+
+s3: f e d c b a
+
+Top(s1) = c, isEmpty(s1) = No
+Top(s2) = 3, isEmpty(s2) = No
+Top(s3) = f, isEmpty(s3) = No
+
+s1: a b c d e f a b c 1 2 3 c b a
+   isEmpty(s1) = No
+
+s2:
+   isEmpty(s2) = Yes
+
+s3:
+   isEmpty(s3) = Yes
+
+Caught: List is empty
+Caught: List is empty
