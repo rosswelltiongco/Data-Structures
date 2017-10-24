@@ -1,0 +1,260 @@
+
+Points
+
+Point p1 is (0,0)
+Point p2 is (0,0)
+p1 == p1?  Yes
+p1 == p2?  Yes
+p1 != p1?  No
+p1 != p2?  No
+X of p1 is 0, Y of p1 is 0
+X of p2 is 0, Y of p2 is 0
+Distance between p1 & p2 is 0
+Polar coordinate of p1 is (0,0)
+Polar coordinate of p2 is (0,0)
+
+Move p2 by (0,5)
+
+Point p1 is (0,0)
+Point p2 is (0,5)
+p1 == p1?  Yes
+p1 == p2?  No
+p1 != p1?  No
+p1 != p2?  Yes
+X of p1 is 0, Y of p1 is 0
+X of p2 is 0, Y of p2 is 5
+Distance between p1 & p2 is 5
+Polar coordinate of p1 is (0,0)
+Polar coordinate of p2 is (5,90)
+
+Multiple Assignments after moving (5,10)
+
+Point p1 is (5,15)
+Point p2 is (5,15)
+p1 == p1?  Yes
+p1 == p2?  Yes
+p1 != p1?  No
+p1 != p2?  No
+X of p1 is 5, Y of p1 is 15
+X of p2 is 5, Y of p2 is 15
+Distance between p1 & p2 is 0
+Polar coordinate of p1 is (15.8114,71.4671)
+Polar coordinate of p2 is (15.8114,71.4671)
+
+Circles
+
+Circle c1 is Center: (5,5), Radius: 1
+Circle c2 is Center: (5,15), Radius: 5
+Circle c3 is Center: (5,15), Radius: 5
+c1 == c1?  Yes
+c1 == c2?  No
+c1 == c3?  No
+c2 == c3?  Yes
+c1 != c1?  No
+c1 != c2?  Yes
+c1 != c3?  Yes
+c2 != c3?  No
+c1 center is (5,5)
+c1 radius is 1
+c2 center is (5,15)
+c2 radius is 5
+c3 center is (5,15)
+c3 radius is 5
+Distance from c1 to c1 is 0
+Distance from c2 to c2 is 0
+Distance from c3 to c3 is 0
+Distance from c1 to c2 is 10
+Distance from c1 to c3 is 10
+Distance from c2 to c3 is 0
+
+Move c2 by (3,6)
+Circle c1 is Center: (5,5), Radius: 1
+Circle c2 is Center: (8,21), Radius: 5
+Circle c3 is Center: (5,15), Radius: 5
+c1 == c1?  Yes
+c1 == c2?  No
+c1 == c3?  No
+c2 == c3?  No
+c1 != c1?  No
+c1 != c2?  Yes
+c1 != c3?  Yes
+c2 != c3?  Yes
+c1 center is (5,5)
+c1 radius is 1
+c2 center is (8,21)
+c2 radius is 5
+c3 center is (5,15)
+c3 radius is 5
+Distance from c1 to c1 is 0
+Distance from c2 to c2 is 0
+Distance from c3 to c3 is 0
+Distance from c1 to c2 is 16.2788
+Distance from c1 to c3 is 10
+Distance from c2 to c3 is 6.7082
+
+Multiple Assignments
+
+Circle c1 is Center: (5,15), Radius: 5
+Circle c2 is Center: (5,15), Radius: 5
+Circle c3 is Center: (5,15), Radius: 5
+c1 == c1?  Yes
+c1 == c2?  Yes
+c1 == c3?  Yes
+c2 == c3?  Yes
+c1 != c1?  No
+c1 != c2?  No
+c1 != c3?  No
+c2 != c3?  No
+c1 center is (5,15)
+c1 radius is 5
+c2 center is (5,15)
+c2 radius is 5
+c3 center is (5,15)
+c3 radius is 5
+Distance from c1 to c1 is 0
+Distance from c2 to c2 is 0
+Distance from c3 to c3 is 0
+Distance from c1 to c2 is 0
+Distance from c1 to c3 is 0
+Distance from c2 to c3 is 0
+
+Targets
+
+Target t1 is Target has 3 rings
+Ring 0.Center: (0,0), Radius: 1
+Ring 1.Center: (0,0), Radius: 2
+Ring 2.Center: (0,0), Radius: 3
+
+
+Target t2 is Target has 5 rings
+Ring 0.Center: (5,7), Radius: 2
+Ring 1.Center: (5,7), Radius: 4
+Ring 2.Center: (5,7), Radius: 6
+Ring 3.Center: (5,7), Radius: 8
+Ring 4.Center: (5,7), Radius: 10
+
+
+Target t3 is Target has 5 rings
+Ring 0.Center: (5,7), Radius: 2
+Ring 1.Center: (5,7), Radius: 4
+Ring 2.Center: (5,7), Radius: 6
+Ring 3.Center: (5,7), Radius: 8
+Ring 4.Center: (5,7), Radius: 10
+
+
+t1 == t1?  Yes
+t1 == t2?  No
+t1 == t3?  No
+t2 == t3?  Yes
+t1 BullsEye is Center: (0,0), Radius: 1
+t2 BullsEye is Center: (5,7), Radius: 2
+t3 BullsEye is Center: (5,7), Radius: 2
+Distance from t1 to t1 is 0
+Distance from t2 to t2 is 0
+Distance from t3 to t3 is 0
+Distance from t1 to t2 is 8.60233
+Distance from t1 to t3 is 8.60233
+Distance from t2 to t3 is 0
+
+Change Target 1's second and last ring
+Target has 3 rings
+Ring 0.Center: (0,0), Radius: 1
+Ring 1.Center: (0,0), Radius: 3
+Ring 2.Center: (0,0), Radius: 300
+
+
+Move target1 by (-2, -3)
+Target t1 is Target has 3 rings
+Ring 0.Center: (-2,-3), Radius: 1
+Ring 1.Center: (-2,-3), Radius: 3
+Ring 2.Center: (-2,-3), Radius: 300
+
+
+Target t2 is Target has 5 rings
+Ring 0.Center: (5,7), Radius: 2
+Ring 1.Center: (5,7), Radius: 4
+Ring 2.Center: (5,7), Radius: 6
+Ring 3.Center: (5,7), Radius: 8
+Ring 4.Center: (5,7), Radius: 10
+
+
+Target t3 is Target has 5 rings
+Ring 0.Center: (5,7), Radius: 2
+Ring 1.Center: (5,7), Radius: 4
+Ring 2.Center: (5,7), Radius: 6
+Ring 3.Center: (5,7), Radius: 8
+Ring 4.Center: (5,7), Radius: 10
+
+
+t1 == t1?  Yes
+t1 == t2?  No
+t1 == t3?  No
+t2 == t3?  Yes
+t1 BullsEye is Center: (-2,-3), Radius: 1
+t2 BullsEye is Center: (5,7), Radius: 2
+t3 BullsEye is Center: (5,7), Radius: 2
+Distance from t1 to t1 is 0
+Distance from t2 to t2 is 0
+Distance from t3 to t3 is 0
+Distance from t1 to t2 is 12.2066
+Distance from t1 to t3 is 12.2066
+Distance from t2 to t3 is 0
+
+Change Target 1's second and last ring
+Target has 3 rings
+Ring 0.Center: (-2,-3), Radius: 1
+Ring 1.Center: (-2,-3), Radius: 4
+Ring 2.Center: (-2,-3), Radius: 300
+
+
+
+Multiple Assignments
+
+Target t1 is Target has 5 rings
+Ring 0.Center: (5,7), Radius: 2
+Ring 1.Center: (5,7), Radius: 4
+Ring 2.Center: (5,7), Radius: 6
+Ring 3.Center: (5,7), Radius: 8
+Ring 4.Center: (5,7), Radius: 10
+
+
+Target t2 is Target has 5 rings
+Ring 0.Center: (5,7), Radius: 2
+Ring 1.Center: (5,7), Radius: 4
+Ring 2.Center: (5,7), Radius: 6
+Ring 3.Center: (5,7), Radius: 8
+Ring 4.Center: (5,7), Radius: 10
+
+
+Target t3 is Target has 5 rings
+Ring 0.Center: (5,7), Radius: 2
+Ring 1.Center: (5,7), Radius: 4
+Ring 2.Center: (5,7), Radius: 6
+Ring 3.Center: (5,7), Radius: 8
+Ring 4.Center: (5,7), Radius: 10
+
+
+t1 == t1?  Yes
+t1 == t2?  Yes
+t1 == t3?  Yes
+t2 == t3?  Yes
+t1 BullsEye is Center: (5,7), Radius: 2
+t2 BullsEye is Center: (5,7), Radius: 2
+t3 BullsEye is Center: (5,7), Radius: 2
+Distance from t1 to t1 is 0
+Distance from t2 to t2 is 0
+Distance from t3 to t3 is 0
+Distance from t1 to t2 is 0
+Distance from t1 to t3 is 0
+Distance from t2 to t3 is 0
+
+Change Target 1's second and last ring
+Target has 5 rings
+Ring 0.Center: (5,7), Radius: 2
+Ring 1.Center: (5,7), Radius: 5
+Ring 2.Center: (5,7), Radius: 6
+Ring 3.Center: (5,7), Radius: 8
+Ring 4.Center: (5,7), Radius: 300
+
+
+Done. Press 'a' to dismiss window

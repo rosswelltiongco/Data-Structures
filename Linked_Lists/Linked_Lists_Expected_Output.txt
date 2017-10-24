@@ -1,0 +1,36 @@
+Created by vector<string> constructor
+exciting most activity life CECS is the fun in 275 and
+
+The original sentence created by adds/removes
+CECS 275 is the most exciting and fun activity in life
+
+sentence front: CECS, rear: life, index 2: is
+
+toVector(true) results in
+275 CECS activity and exciting fun in is life most the
+After toVector, copy and sort the original sentence
+CECS 275 is the most exciting and fun activity in life
+
+Result of copy constructor
+CECS 275 is the most exciting and fun activity in life
+After copy constructor the original sentence
+CECS 275 is the most exciting and fun activity in life
+
+Result of operator=
+CECS 275 is the most exciting and fun activity in life
+After operator= the original sentence
+CECS 275 is the most exciting and fun activity in life
+
+evens: 2 4 6
+
+odds: 3 5 7
+
+all (odds + evens): 2 4 6 3 5 7
+
+composites: 4 6
+
+primes (all - composites): 2 3 5 7
+
+Is empty list empty? Yes
+Is empty == empty ? Yes
+Is all == sentence ? No
