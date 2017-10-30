@@ -7,10 +7,9 @@ using namespace std;
 
 #include "linked_list.h"
 
-//Index errors
-static const string INDEXERROR = "Index out of range";
-static const string NOTFOUNDERROR = "String not found";
-static const string EMPTYLISTERROR = "List is empty";
+static const string Missing = "String not found";
+static const string OutOfRange = "Index out of range";
+static const string ListEmpty = "List is empty";
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Helper
@@ -27,7 +26,7 @@ LinkedList::LinkedList()
 {
 	init();
 }
-
+	
 LinkedList::LinkedList(vector<string> &strings)
 {
 	init();
@@ -51,7 +50,7 @@ LinkedList LinkedList::operator=(const LinkedList &other)
 
 	return *this;
 }
-
+	
 LinkedList::~LinkedList()
 {
 	deleteAll();
@@ -76,12 +75,9 @@ void LinkedList::addToRear(string element)
 	newNode->mNext->mPrevious = newNode;
 }
 
-void LinkedList::addAt(string element, int index) throw (string)
+void LinkedList::addAt(string element, int index) throw(string)
 {
-	if (index > getCount())
-	{
-		throw INDEXERROR;
-	}
+	if (index < 0 || index > getCount()) throw OutOfRange;
 
 	Node *current = mFront;
 	for (int ii = 0; ii < index; ++ii)
@@ -96,35 +92,26 @@ void LinkedList::addAt(string element, int index) throw (string)
 	newNode->mNext->mPrevious = newNode;
 }
 
-void LinkedList::addBefore(string elementToAdd, string elementToAddBefore) throw(string)
+void LinkedList::addBefore(string elementToAdd, string elementToAddBefore)
 {
-	if (!isPresent(elementToAddBefore))
-	{
-		throw NOTFOUNDERROR;
-	}
-
 	int index = find(elementToAddBefore);
+	if (index == -1) throw Missing;
+
 	addAt(elementToAdd, index);
 
 }
-
-void LinkedList::addAfter(string elementToAdd, string elementToAddAfter) throw(string)
+	
+void LinkedList::addAfter(string elementToAdd, string elementToAddAfter)
 {
-	if (!isPresent(elementToAddAfter))
-	{
-		throw NOTFOUNDERROR;
-	}
+	int index = find(elementToAddAfter); 
+	if (index == -1) throw Missing;
 
-	int index = find(elementToAddAfter);
 	addAt(elementToAdd, index + 1);
 }
 
-string LinkedList::getAt(int index) const throw(string)
+string LinkedList::getAt(int index) const
 {
-	if (index > getCount())
-	{
-		throw INDEXERROR;
-	}
+	if (index < 0 || index >= getCount()) throw OutOfRange;
 
 	Node *current = mFront->mNext;
 	for (int ii = 0; ii < index; ++ii)
@@ -135,50 +122,50 @@ string LinkedList::getAt(int index) const throw(string)
 	return current->mData;
 }
 
-string LinkedList::getFront() const throw(string)
+string LinkedList::getFront() const
 {
-	if (isEmpty())
-	{
-		throw EMPTYLISTERROR;
-	}
-
+	if (isEmpty()) throw ListEmpty;
 	return mFront->mNext->mData;
 }
 
-string LinkedList::getRear() const throw(string)
+string LinkedList::getRear() const
 {
-	if (isEmpty())
-	{
-		throw EMPTYLISTERROR;
-	}
-
+	if (isEmpty()) throw ListEmpty;
 	return mRear->mPrevious->mData;
 }
-
-void LinkedList::remove(string element) throw (string)
+	
+void LinkedList::remove(string element)
 {
-	if (!isPresent(element))
-	{
-		throw NOTFOUNDERROR;
-	}
+	int index = find(element);
+	if (index == -1) throw Missing;
 
-	Node *current = mFront->mNext;
-	while (!isEqual(current->mData, element)) current = current->mNext;
-
-	current->mPrevious->mNext = current->mNext;
-	current->mNext->mPrevious = current->mPrevious;
-
-	delete current;
+	removeAt(index);
 }
 
-void LinkedList::removeAt(int index) throw (string)
+void LinkedList::removeFront()
 {
-	if (index > getCount())
+	if (isEmpty()) throw ListEmpty;
+	removeAt(0);
+}
+
+void LinkedList::removeRear()
+{
+	if (isEmpty()) throw ListEmpty;
+	removeAt(getCount() - 1);
+}
+
+void LinkedList::removeAt(int index)
+{
+	if (index < 0 || index >= getCount()) throw OutOfRange;
+	
+	Node *current = mFront->mNext;
+	for (int ii = 0; ii < index; ++ii)
 	{
-		throw INDEXERROR;
+		current = current->mNext;
 	}
 
-	remove(getAt(index));
+	current->remove();
+	delete current;
 }
 
 vector<string> LinkedList::toVector(bool sorted) const
@@ -267,26 +254,6 @@ bool LinkedList::isPresent(string element) const
 	else return true;
 }
 
-void LinkedList::removeFront() throw (string)
-{
-	if (isEmpty())
-	{
-		throw EMPTYLISTERROR;
-	}
-
-	remove(getFront());
-}
-
-void LinkedList::removeRear()
-{
-	if (isEmpty())
-	{
-		throw EMPTYLISTERROR;
-	}
-
-	remove(getRear());
-}
-
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Friends
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -336,7 +303,7 @@ void LinkedList::copyAll(const LinkedList &other) // not DUMMYs - only client ad
 		current = current->mNext;
 	}
 }
-
+	
 void LinkedList::deleteAll() // Including DUMMYs
 {
 	Node *current = mFront;

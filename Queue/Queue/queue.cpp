@@ -5,15 +5,15 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 Queue::Queue()
 {
-
+	init();
 }
 Queue::Queue(const Queue &other)
 {
-
+	init();
 }
 Queue Queue::operator=(const Queue &other)
 {
-
+	return *this;
 }
 Queue::~Queue()
 {
@@ -26,11 +26,11 @@ void Queue::add(string s)
 }
 string Queue::remove()
 {
-
+	return "cat";
 }
 bool Queue::isEmpty() const
 {
-
+	return true;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,7 +38,7 @@ bool Queue::isEmpty() const
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ostream &operator<<(ostream &os, const Queue &q)
 {
-
+	return os;
 }
 
 
@@ -51,10 +51,10 @@ void Queue::init()
 }
 void Queue::copyAll(const Queue &other)
 {
-
+	//copy all
 }
 void Queue::deleteAll()
 {
-
+	//delete all
 }
 
