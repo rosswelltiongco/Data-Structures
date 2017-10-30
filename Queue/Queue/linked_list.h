@@ -1,3 +1,9 @@
+/*This linked list's remove method removes ONLY the first instance of the string,
+allowing non-unique strings to remain.
+
+This allows the queue's front or end to not matter anymore
+*/
+
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 

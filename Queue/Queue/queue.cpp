@@ -10,9 +10,13 @@ Queue::Queue()
 Queue::Queue(const Queue &other)
 {
 	init();
+	copyAll(other);
 }
 Queue Queue::operator=(const Queue &other)
 {
+	deleteAll();
+	init();
+	copyAll(other);
 	return *this;
 }
 Queue::~Queue()
@@ -22,15 +26,17 @@ Queue::~Queue()
 
 void Queue::add(string s)
 {
-
+	mList.addToFront(s);
 }
 string Queue::remove()
 {
-	return "cat";
+	return mList.getRear();
+	mList.removeRear();
 }
 bool Queue::isEmpty() const
 {
-	return true;
+	if (mList.isEmpty()) return true;
+	else return false;
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -38,6 +44,10 @@ bool Queue::isEmpty() const
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ostream &operator<<(ostream &os, const Queue &q)
 {
+	for (int i = 0; i < q.mList.getCount(); i++)
+	{
+		os << q.mList.getAt(i) << " ";
+	}
 	return os;
 }
 
@@ -51,7 +61,11 @@ void Queue::init()
 }
 void Queue::copyAll(const Queue &other)
 {
-	//copy all
+	for (int i = 0; i < other.mList.getCount(); i++)
+	{
+
+		this->mList.addToFront(other.mList.getAt(i));
+	}
 }
 void Queue::deleteAll()
 {
