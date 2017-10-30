@@ -27,17 +27,17 @@ Queue::~Queue()
 
 void Queue::add(string s)
 {
-	mList.addToFront(s);
+	mList->addToFront(s);
 }
 string Queue::remove()
 {
-	string returnVal = mList.getRear();
-	mList.removeRear();
+	string returnVal = mList->getRear();
+	mList->removeRear();
 	return returnVal;
 }
 bool Queue::isEmpty() const
 {
-	if (mList.isEmpty()) return true;
+	if (mList->isEmpty()) return true;
 	else return false;
 }
 
@@ -46,9 +46,9 @@ bool Queue::isEmpty() const
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 ostream &operator<<(ostream &os, const Queue &q)
 {
-	for (int i = 0; i < q.mList.getCount(); i++)
+	for (int i = 0; i < q.mList->getCount(); i++)
 	{
-		os << q.mList.getAt(i) << " ";
+		os << q.mList->getAt(i) << " ";
 	}
 	return os;
 }
@@ -59,14 +59,14 @@ ostream &operator<<(ostream &os, const Queue &q)
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////
 void Queue::init()
 {
-	LinkedList mList;
+	mList = new LinkedList();
 }
 void Queue::copyAll(const Queue &other)
 {
-	for (int i = 0; i < other.mList.getCount(); i++)
+	for (int i = 0; i < other.mList->getCount(); i++)
 	{
 
-		this->mList.addToFront(other.mList.getAt(i));
+		this->mList->addToFront(other.mList->getAt(i));
 	}
 }
 void Queue::deleteAll()

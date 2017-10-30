@@ -204,7 +204,7 @@ private:
 	void copyAll(const Queue &other);
 	void deleteAll();
 
-	LinkedList mList;
+	LinkedList *mList;
 
 };
 #endif
