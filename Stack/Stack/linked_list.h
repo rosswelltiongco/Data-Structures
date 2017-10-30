@@ -135,7 +135,7 @@ Method Name:  add(string element)
 */
 	void add(string element);
 
-	/*
+/*
 Method Name:  addToFront(element)
 
 		Adds an node containing an element to the very beginning
@@ -155,7 +155,7 @@ Method Name:  addToFront(element)
 */
 	void addToFront(string element);
 
-	/*
+/*
 Method Name:  addToRear(element)
 
 		Adds an element to the very end
@@ -176,7 +176,7 @@ Method Name:  addToRear(element)
 	void addToRear(string element);
 
 
-	/*
+/*
 Method Name:  addAt(element, index)
 
 		Adds an element at the desired index
@@ -241,7 +241,7 @@ Method Name:  addAfter(elementToAdd, elementToAddAfter)
 */
 	void addAfter(string elementToAdd, string elementToAddAfter)  throw(string);
 
-	/*
+/*
 Method Name:  remove(element)
 
 		removes an element
@@ -303,7 +303,7 @@ Method Name:  removeFront()
 	void removeFront() throw (string);
 
 /*
-Method Name:  LinkedList()
+Method Name:  removeRear()
 
 		Removes the last node
 
@@ -400,7 +400,7 @@ Method Name:  getCount()
 */
 	int getCount() const;
 
-	/*
+/*
 Method Name:  isEmpty
 
 		Checks if the linked list has no dummy nodes
@@ -490,7 +490,7 @@ Method Name:  operator-
 */
 	LinkedList operator-(const LinkedList &other);
 
-	/*
+/*
 Method Name:  operator==(other)
 
 		Checks to see if a linked list is equivalent

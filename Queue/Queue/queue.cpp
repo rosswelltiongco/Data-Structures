@@ -71,5 +71,6 @@ void Queue::copyAll(const Queue &other)
 }
 void Queue::deleteAll()
 {
+	delete mList;
 }
 
