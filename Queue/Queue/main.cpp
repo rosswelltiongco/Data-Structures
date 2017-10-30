@@ -146,6 +146,7 @@ static bool isBalanced(string s)
 int main(int argc, char **argv)
 {
 	vector<string> input = getInput();
+
 	for (unsigned int ii = 0; ii < input.size(); ++ii)
 	{
 		string expression = input.at(ii);
@@ -165,9 +166,7 @@ int main(int argc, char **argv)
 		Queue postFix = getPostFix(tokens);
 		cout << "Postfix: " << postFix << endl;
 
-	/*
 		cout << "Value: " << evaluate(postFix) << endl << endl;
-	*/
 	}
 
 	char a; cout << "Pause: "; cin >> a;

@@ -31,8 +31,9 @@ void Queue::add(string s)
 }
 string Queue::remove()
 {
-	return mList.getRear();
+	string returnVal = mList.getRear();
 	mList.removeRear();
+	return returnVal;
 }
 bool Queue::isEmpty() const
 {
@@ -70,6 +71,5 @@ void Queue::copyAll(const Queue &other)
 }
 void Queue::deleteAll()
 {
-	//delete all
 }
 
