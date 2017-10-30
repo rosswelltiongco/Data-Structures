@@ -1,3 +1,5 @@
+//Rosswell Tiongco, ID: 016091762, Assignment #6
+
 /*This linked list's remove method removes ONLY the first instance of the string,
 allowing non-unique strings to remain.
 

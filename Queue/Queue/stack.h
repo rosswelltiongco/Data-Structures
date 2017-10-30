@@ -1,3 +1,4 @@
+//Rosswell Tiongco, ID: 016091762, Assignment #6
 #ifndef STACK_H
 #define STACK_H
 
@@ -39,7 +40,7 @@ public:
 */
 	Stack();
 
-	/*
+/*
 * Method Name:  Stack(other)
 *
 *    Constructor given an existing stack
@@ -90,29 +91,29 @@ public:
 	Stack operator=(const Stack &other);
 
 
-	/*
-	* Method Name:  ~Stack()
-	*
-	*    Destructor
-	*
-	* Input Only:
-	*      None
-	*
-	* Input & Output:
-	*      None
-	*
-	* Output Only:
-	*      None
-	*
-	* Returns:
-	*     None
-	*
-	* Side Effects:
-	*     None
-	*
-	* Throws:
-	*     None
-	*/
+/*
+* Method Name:  ~Stack()
+*
+*    Destructor
+*
+* Input Only:
+*      None
+*
+* Input & Output:
+*      None
+*
+* Output Only:
+*      None
+*
+* Returns:
+*     None
+*
+* Side Effects:
+*     None
+*
+* Throws:
+*     None
+*/
 	~Stack();
 
 /*
@@ -219,7 +220,7 @@ public:
 /*
 * Method Name:  operator<<(os, s)
 *
-*    An overloaded ;p
+*    Overloads the cout operator for a stack
 *
 * Input Only:
 *      os - object stream 
