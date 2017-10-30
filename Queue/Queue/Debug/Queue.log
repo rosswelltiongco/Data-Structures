@@ -1,0 +1,16 @@
+﻿  stack.cpp
+  queue.cpp
+c:\users\rosswell\documents\data-structures\queue\queue\queue.cpp(4): error C2059: syntax error: ')'
+c:\users\rosswell\documents\data-structures\queue\queue\queue.cpp(5): error C2059: syntax error: 'const'
+c:\users\rosswell\documents\data-structures\queue\queue\queue.cpp(6): error C2801: 'operator =' must be a non-static member
+c:\users\rosswell\documents\data-structures\queue\queue\queue.cpp(7): error C2588: '::~Queue': illegal global destructor
+c:\users\rosswell\documents\data-structures\queue\queue\queue.cpp(7): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\rosswell\documents\data-structures\queue\queue\queue.cpp(11): error C2270: 'isEmpty': modifiers not allowed on nonmember functions
+c:\users\rosswell\documents\data-structures\queue\queue\queue.cpp(14): error C2255: 'friend': not allowed outside of a class definition
+c:\users\rosswell\documents\data-structures\queue\queue\queue.cpp(14): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\rosswell\documents\data-structures\queue\queue\queue.cpp(14): error C2143: syntax error: missing ',' before '&'
+c:\users\rosswell\documents\data-structures\queue\queue\queue.cpp(19): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+c:\users\rosswell\documents\data-structures\queue\queue\queue.cpp(19): error C2143: syntax error: missing ',' before '&'
+  main.cpp
+  linked_list.cpp
+  Generating Code...
