@@ -1,36 +1,69 @@
 //Circular Queue Implementation
-#ifndef QUEUE_H
-#define QUEUE_H
+//NOTE: CHANGE mQUEUE back to poitner
+#include <iostream>
+#include "queue.h"
 
-#include <string>
 using namespace std;
 
-#include "linked_list.h"
-
-class Queue
+Queue::Queue(int size)
 {
-public:
-	Queue(int size = 200);
-	Queue(const Queue &other);
-	Queue operator=(const Queue &other);
-	~Queue();
+	init(size);
+}
+Queue::Queue(const Queue &other)
+{
+	init(other.mSize);
+}
+Queue Queue::operator=(const Queue &other)
+{
+	deleteAll();
+	init(other.mSize);
+	copyAll(other);
+	return *this;
+}
+Queue::~Queue()
+{
+	deleteAll();
+}
 
-	void add(string s) throw(string);
-	string remove() throw(string);
-	bool isEmpty() const;
+void Queue::add(string s) throw(string)
+{
+	mCount++;
+}
+string Queue::remove() throw(string)
+{
+	string dummy = "Dummy";
+	mCount--;
+	return dummy;
+}
+bool Queue::isEmpty() const
+{
+	if (mCount == 0)
+	{
+		return true;
+	}
+}
 
-	friend ostream &operator<<(ostream &os, const Queue &q);
+ostream &operator<<(ostream &os, const Queue &q)
+{
+	os << q.mQueue << endl;
+	return os;
+}
 
-private:
-	void init(int size);
-	void copyAll(const Queue &other);
-	void deleteAll();
 
+void Queue::init(int size)
+{
 	string *mQueue;
-	int mSize;
+	int mSize = size;
 	int mCount;
 	int mFront;
 	int mRear;
+}
+void copyAll(const Queue &other)
+{
 
-};
-#endif
+}
+void deleteAll()
+{
+
+}
+

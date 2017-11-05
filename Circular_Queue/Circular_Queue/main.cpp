@@ -192,7 +192,7 @@ int main(int argc, char **argv)
 		cout << "Value: " << evaluate(postFix) << endl << endl;
 	}
 
-	checkThrows();
+	//checkThrows();
 
 	char a; cout << "Pause: "; cin >> a;
 
