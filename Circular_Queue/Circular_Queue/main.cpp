@@ -14,9 +14,9 @@ static vector<string> getInput()
 	input.push_back("( 1 + 2 )");
 	input.push_back("( ( 1 + 2 )");
 	input.push_back("( 3 + ( 22 / 7 ) )");
-	input.push_back("( ( 3 + 4 ) * 5 )"); 
+	input.push_back("( ( 3 + 4 ) * 5 )");
 	input.push_back("( ( 1 / 3 ) * ( 6 / 2 ) )");
-	
+
 	return input;
 
 }
@@ -45,9 +45,9 @@ static vector<string> tokenize(string expression)
 static bool isOperator(string s)
 {
 	return	(s.compare("+") == 00) ||
-			(s.compare("-") == 00) ||
-			(s.compare("*") == 00) ||
-			(s.compare("/") == 00);
+		(s.compare("-") == 00) ||
+		(s.compare("*") == 00) ||
+		(s.compare("/") == 00);
 }
 
 static Queue getPostFix(vector<string> tokens)
@@ -82,7 +82,7 @@ static Queue getPostFix(vector<string> tokens)
 			postFix.add(token);
 		}
 	}
-	
+
 	return postFix;
 }
 
@@ -192,7 +192,7 @@ int main(int argc, char **argv)
 		cout << "Value: " << evaluate(postFix) << endl << endl;
 	}
 
-	//checkThrows();
+	checkThrows();
 
 	char a; cout << "Pause: "; cin >> a;
 

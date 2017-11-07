@@ -1,9 +1,10 @@
+//Rosswell Tiongco, ID#: 016091762
 //Circular Queue Implementation
-//NOTE: CHANGE mQUEUE back to poitner
 #include <iostream>
 #include "queue.h"
 
-using namespace std;
+static const string FULL = "Q Full";
+static const string EMPTY = "Q Empty";
 
 Queue::Queue(int size)
 {
@@ -12,6 +13,7 @@ Queue::Queue(int size)
 Queue::Queue(const Queue &other)
 {
 	init(other.mSize);
+	copyAll(other);
 }
 Queue Queue::operator=(const Queue &other)
 {
@@ -27,13 +29,25 @@ Queue::~Queue()
 
 void Queue::add(string s) throw(string)
 {
+	if (mCount == mSize)
+	{
+		throw FULL;
+	}
+	mQueue[mRear] = s;
+	mRear = (mRear + 1) % mSize;
 	mCount++;
+
 }
 string Queue::remove() throw(string)
 {
-	string dummy = "Dummy";
+	if (mCount == 0)
+	{
+		throw EMPTY;
+	}
+	string removedString = mQueue[mFront];
+	mFront = (mFront + 1) % mSize;
 	mCount--;
-	return dummy;
+	return removedString;
 }
 bool Queue::isEmpty() const
 {
@@ -41,29 +55,39 @@ bool Queue::isEmpty() const
 	{
 		return true;
 	}
+	else return false;
 }
 
 ostream &operator<<(ostream &os, const Queue &q)
 {
-	os << q.mQueue << endl;
+	for (int i = q.mFront; i < q.mRear; i++)
+	{
+		os << q.mQueue[i] << " ";
+	}
 	return os;
 }
 
 
 void Queue::init(int size)
 {
-	string *mQueue;
-	int mSize = size;
-	int mCount;
-	int mFront;
-	int mRear;
+	mSize = size;
+	mFront, mRear, mCount = 0;
+	//mQueue[mSize];
+	mQueue = new string[mSize];
 }
-void copyAll(const Queue &other)
+void Queue::copyAll(const Queue &other)
 {
-
+	for (int i = 0; i < other.mCount; i++)
+	{
+		mQueue[i] = other.mQueue[i];
+	}
+	mSize = other.mSize;
+	mCount = other.mCount;
+	mFront = other.mFront;
+	mRear = other.mRear;
 }
-void deleteAll()
+void Queue::deleteAll()
 {
-
+	delete[] mQueue;
+	mSize, mCount, mFront, mRear = 0;
 }
-
