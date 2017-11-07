@@ -1,0 +1,51 @@
+Reverse of empty string is
+Reverse of <a> is a
+Reverse of <ab> is ba
+Reverse of <abcde> is edcba
+factorial(0) is 0
+factorial(1) is 1
+factorial(10) is 3628800
+countOccurances(a, ) is 0
+countOccurances(a, x) is 0
+countOccurances(a, xyz) is 0
+countOccurances(a, xabaca) is 3
+isPalindrome() is Yes
+isPalindrome(a) is Yes
+isPalindrome(xx) is Yes
+isPalindrome(xy) is No
+isPalindrome(radar) is Yes
+isPalindrome(turkey) is No
+gcd(1,1) is 1
+gcd(32452867,860281211) is 1
+gcd(125,4000) is 125
+mult(0,4) is 0
+mult(4,0) is 0
+mult(5,25)) is 125
+
+towers(0) is:
+TowerOfHanoi(0)
+
+towers(1) is:
+TowerOfHanoi(1)
+Moved 1 from Stack Tower 1 to Stack Tower 2
+Required 1 moves
+
+towers(4) is:
+TowerOfHanoi(4)
+Moved 1 from Stack Tower 1 to Stack Tower 3
+Moved 2 from Stack Tower 1 to Stack Tower 2
+Moved 1 from Stack Tower 3 to Stack Tower 2
+Moved 3 from Stack Tower 1 to Stack Tower 3
+Moved 1 from Stack Tower 2 to Stack Tower 1
+Moved 2 from Stack Tower 2 to Stack Tower 3
+Moved 1 from Stack Tower 1 to Stack Tower 3
+Moved 4 from Stack Tower 1 to Stack Tower 2
+Moved 1 from Stack Tower 3 to Stack Tower 2
+Moved 2 from Stack Tower 3 to Stack Tower 1
+Moved 1 from Stack Tower 2 to Stack Tower 1
+Moved 3 from Stack Tower 3 to Stack Tower 2
+Moved 1 from Stack Tower 1 to Stack Tower 3
+Moved 2 from Stack Tower 1 to Stack Tower 2
+Moved 1 from Stack Tower 3 to Stack Tower 2
+Required 15 moves
+OK
