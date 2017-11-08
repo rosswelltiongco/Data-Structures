@@ -1,4 +1,3 @@
-//Rosswell Tiongco, ID#: 016091762
 //Circular Queue Implementation
 #include <iostream>
 #include "queue.h"
