@@ -19,24 +19,10 @@ int Utility::factorial(int n)
 	else return n*factorial(n - 1);
 }
 int Utility::countOccurances(char a, string s)
-                            //a , "ba"
-	                        //a, "a"
 {
-	if ((s.size() <= 1) && (a == s[0]))
-	{
-		cout << "length 1 & equal" << endl;
-		return 1;
-	}
-	else if ((s.size() <= 1) && (a != s[0]))
-	{
-		cout << "length 1 & not equal" << endl;
-		return 0;
-	}
-	else
-	{
-		cout << " Im iterating" << endl;
-		return (1 + countOccurances(a,  s.substr(1, s.size()  )));
-	}
+	if (s.size() == 0) return 0;
+	else if (s.size() == 1) return (s[0] == a ? 1 : 0);
+	else return (s[0] == a ? 1 : 0) + (countOccurances(a, s.substr(1, s.size())));
 }
 bool Utility::isPalindrome(string s)
 {
