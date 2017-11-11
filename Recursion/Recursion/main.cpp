@@ -7,6 +7,7 @@ using namespace std;
 void main()
 {
 	Utility U;
+	
 	/*
 	cout << "Reverse of empty string is " << U.reverse("") << endl;
 	cout << "Reverse of <a> is " << U.reverse("a") << endl;
@@ -30,17 +31,17 @@ void main()
 	cout << "isPalindrome(xy) is " << ((U.isPalindrome("xy")) ? "Yes" : "No") << endl;
 	cout << "isPalindrome(radar) is " << ((U.isPalindrome("radar")) ? "Yes" : "No") << endl;
 	cout << "isPalindrome(turkey) is " << ((U.isPalindrome("turkey")) ? "Yes" : "No") << endl;
-	*/
+
 	cout << "gcd(1,1) is " << U.gcd(1, 1) << endl;
 	cout << "gcd(32452867,860281211) is " << U.gcd(32452867, 86028121) << endl;;
 	cout << "gcd(125,4000) is " << U.gcd(125, 4000) << endl;;
 	
+
 	cout << "mult(0,4) is " << U.mult(0, 4) << endl;;
 	cout << "mult(4,0) is " << U.mult(4, 0) << endl;;
 	cout << "mult(5,25)) is " << U.mult(5, 25) << endl;;
+	*/
 	
-	
-	/*
 	cout << "\ntowers(0) is:" << endl;
 	U.towers(0);
 
@@ -49,7 +50,6 @@ void main()
 
 	cout << "\ntowers(4) is:" << endl;
 	U.towers(4);
-	*/
 
 	cout << "OK "; char a; cin >> a;
 

@@ -32,11 +32,17 @@ bool Utility::isPalindrome(string s)
 }
 int Utility::gcd(int a, int b)
 {
-	return 0;
+	if (b != 0)
+		return gcd(b, a % b);
+	else
+		return a;
 }
 int Utility::mult(int a, int b)
 {
-	return 0;
+	//Recursively adding
+	if (b == 0) return 0;
+	else if (b == 1) return a;
+	else return a + mult(a, b - 1);
 }
 void Utility::towers(int n)
 {
