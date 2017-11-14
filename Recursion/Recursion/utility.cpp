@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include "utility.h"
+#include "stack.h"
 
 Utility::Utility()
 {
@@ -44,7 +45,33 @@ int Utility::mult(int a, int b)
 	else if (b == 1) return a;
 	else return a + mult(a, b - 1);
 }
+
+
+void solve(Stack &from, Stack &to, Stack &temp, int n);
+void move(Stack &from, Stack &to);
+
 void Utility::towers(int n)
 {
-	//Fill me
+
 }
+
+
+void solve(Stack &from, Stack &to, Stack &temp, int n)
+{
+	if (n == 0)
+	{
+		return;
+	}
+	else if (n == 1)
+	{
+		move(from, to);
+		return;
+	}
+	//Base case 1: , if only one ring, just call move to last ring
+}
+
+void move(Stack &from, Stack &to)
+{
+
+}
+
