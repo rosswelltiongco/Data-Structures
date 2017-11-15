@@ -6,8 +6,6 @@
 
 Utility::Utility()
 {
-	//Does nothing
-	//Just a necessary default constructor
 }
 string Utility::reverse(string s)
 {
@@ -40,38 +38,49 @@ int Utility::gcd(int a, int b)
 }
 int Utility::mult(int a, int b)
 {
-	//Recursively adding
 	if (b == 0) return 0;
 	else if (b == 1) return a;
 	else return a + mult(a, b - 1);
 }
 
-
-void solve(Stack &from, Stack &to, Stack &temp, int n);
-void move(Stack &from, Stack &to);
+static void solve(Stack &from, Stack &to, Stack &temp, int n, int &moveCount);
+static void move(Stack &from, Stack &to, int &moveCount);
+static int moveCount;
 
 void Utility::towers(int n)
 {
+	moveCount = 0;
+	Stack tower1("Tower 1"), tower2("Tower 2"), tower3("Tower 3");
+	cout << "TowersOfHanoi(" << n << ")" << endl;
 
-}
-
-
-void solve(Stack &from, Stack &to, Stack &temp, int n)
-{
-	if (n == 0)
+	for (int ii = n; ii > 0; --ii)
 	{
-		return;
+		tower1.push(ii);
 	}
-	else if (n == 1)
-	{
-		move(from, to);
-		return;
+
+	solve(tower1, tower2, tower3, n, moveCount);
+	if (moveCount > 0) {
+		cout << "Required " << moveCount << " moves" << endl;
 	}
-	//Base case 1: , if only one ring, just call move to last ring
 }
 
-void move(Stack &from, Stack &to)
+void solve(Stack &from, Stack &to, Stack &temp, int n, int &moveCount)
 {
-
+	if (n == 0) return;
+	else if (n == 1) move(from, to, moveCount);
+	else
+	{
+		solve(from, temp, to, n - 1,moveCount);
+		move(from, to, moveCount);
+		solve(temp, to, from, n - 1,moveCount);
+	}
 }
 
+void move(Stack &from, Stack &to, int &moveCount)
+{
+	int ring = from.getTop();
+	from.pop();
+	to.push(ring);
+	moveCount++;
+	cout << "Moved " << ring << " from Stack " << from.getName() << " to Stack " << to.getName() << endl;
+}
