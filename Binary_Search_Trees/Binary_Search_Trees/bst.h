@@ -146,7 +146,7 @@ private:
 		Node(int key, string data);
 		void add(int key, string data);
 		bool isPresent(int key) const;
-		void getTraversal(TraversalOrder order, vector<string> &answer, Node *current) const;
+		void getTraversal(TraversalOrder order, vector<string> &answer) const;
 		double evaluate(Node *root);
 		double evaluateAt(int key);
 
@@ -158,8 +158,8 @@ private:
 		double mValue;
 	};
 	
-	BST::Node * find(int key)const;
-	Node *mRoot;          // MUST use this
+	//BST::Node * find(int key)const; //Not used
+	Node *mRoot;
 
 };
 

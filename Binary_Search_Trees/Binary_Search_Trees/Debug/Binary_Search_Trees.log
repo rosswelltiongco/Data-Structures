@@ -1,7 +1,8 @@
 ﻿  bst.cpp
   Generating Code...
-c:\users\rosswell\documents\data-structures\binary_search_trees\binary_search_trees\bst.cpp(173): warning C4715: 'BST::Node::evaluate': not all control paths return a value
+c:\users\rosswell\documents\data-structures\binary_search_trees\binary_search_trees\bst.cpp(149): warning C4715: 'BST::Node::evaluate': not all control paths return a value
   Compiling...
   main.cpp
   Generating Code...
+cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
   Binary_Search_Trees.vcxproj -> C:\Users\Rosswell\Documents\Data-Structures\Binary_Search_Trees\Debug\Binary_Search_Trees.exe

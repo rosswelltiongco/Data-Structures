@@ -42,7 +42,7 @@ vector<string> BST::getTraversal(TraversalOrder order) const
 	}
 	else
 	{
-		mRoot->getTraversal(order, returnVector, mRoot);
+		mRoot->getTraversal(order, returnVector);
 		return returnVector;
 	}
 }
@@ -115,40 +115,16 @@ bool BST::Node::isPresent(int key) const
 	}
 	return false;
 }
-/*
-void BST::Node::getTraversal(TraversalOrder order, vector<string> &answer) const
-{
-	//Murglo method
-	if (order == PREORDER) answer.push_back(mData);
-	mLeft->getTraversal(order, answer);
-	if (order == INORDER) answer.push_back(mData);
-	mRight->getTraversal(order, answer);
-	if (order == POSTORDER) answer.push_back(mData);
-}
-*/
 
-void BST::Node::getTraversal(TraversalOrder order, vector<string> &answer, Node *current) const
+void BST::Node::getTraversal(TraversalOrder order, vector<string>& answer) const
 {
-	if (order == PREORDER)
-	{
-		if (current == NULL) return;
-		answer.push_back(current->mData);
-		getTraversal(order, answer, current->mLeft);
-		getTraversal(order, answer, current->mRight);
-	}
-	else if (order == INORDER)
-	{
-		if (current == NULL) return;
-		getTraversal(order, answer, current->mLeft);
-		answer.push_back(current->mData);
-		getTraversal(order, answer, current->mRight);
-	}
-	else
-	{
-		if (current == NULL) return;
-		getTraversal(order, answer, current->mLeft);
-		getTraversal(order, answer, current->mRight);
-		answer.push_back(current->mData);
+	if (this != NULL) {
+
+		if (order == PREORDER) answer.push_back(mData);
+		mLeft->getTraversal(order, answer);
+		if (order == INORDER) answer.push_back(mData);
+		mRight->getTraversal(order, answer);
+		if (order == POSTORDER) answer.push_back(mData);
 	}
 }
 
@@ -191,7 +167,8 @@ double BST::Node::evaluateAt(int key)
 	return false;
 
 }
-
+/*
+Not used
 BST::Node* BST::find(int key) const
 {
 	Node *current = mRoot;
@@ -204,3 +181,4 @@ BST::Node* BST::find(int key) const
 	}
 	return NULL;
 }
+*/

@@ -1,0 +1,4 @@
+﻿  graph.cpp
+c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(65): warning C4018: '<': signed/unsigned mismatch
+c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(80): warning C4018: '<': signed/unsigned mismatch
+  Directed_Graph.vcxproj -> C:\Users\Rosswell\Documents\Data-Structures\Directed_Graph\Debug\Directed_Graph.exe
