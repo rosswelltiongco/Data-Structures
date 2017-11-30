@@ -20,16 +20,11 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="bst.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Binary_Search_Trees_Output.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

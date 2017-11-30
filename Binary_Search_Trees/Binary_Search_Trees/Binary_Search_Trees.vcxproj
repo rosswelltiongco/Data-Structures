@@ -115,10 +115,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bst.cpp" />
-    <ClCompile Include="main.cpp.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="Binary_Search_Trees_Output.txt" />
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

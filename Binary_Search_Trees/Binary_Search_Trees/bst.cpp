@@ -1,33 +1,206 @@
-#ifndef BST_H
-#define BST_H
+// Rosswell Tiongco, 016091762, Assignment #9
 
-#include <vector>
-using namespace std;
+#include "bst.h"
+#include <iostream>
+#include <string>
+enum TraversalOrder { PREORDER, INORDER, POSTORDER };
 
-
-class BST
+/////////////////////////////////////////////////////
+//////////       BST Public           ///////////////
+/////////////////////////////////////////////////////
+BST::BST()
 {
-public:
-	enum TraversalOrder { PREORDER, INORDER, POSTORDER };
+	//Default constructor does nothing
+}
 
-	BST();
-	void add(int key, string data);
-	bool isPresent(int key) const;
-	vector<string> getTraversal(TraversalOrder order) const;
-	double evaluate();
-	double evaluateAt(int key);
-
-private:
-
-	class Node
+void BST::add(int key, string data)
+{
+	if (mRoot == NULL)
 	{
-		friend class BST;
+		mRoot = new Node(key, data);
+	}
+	else
+	{
+		mRoot->add(key,data);
+	}
+}
 
+bool BST::isPresent(int key) const
+{
+	if (mRoot == NULL)
+		return false;
+	else
+		return mRoot->isPresent(key);
+}
+
+vector<string> BST::getTraversal(TraversalOrder order) const
+{
+	vector<string> returnVector;
+	if (mRoot == NULL)
+	{
+		return returnVector;
+	}
+	else
+	{
+		mRoot->getTraversal(order, returnVector, mRoot);
+		return returnVector;
+	}
+}
+
+double BST::evaluate()
+{
+	if (mRoot == NULL)
+	{
+		return 0;
+	}
+	else
+	{
+		return mRoot->evaluate(mRoot);
+	}
+}
+
+double BST::evaluateAt(int key)
+{
+	if (mRoot == NULL)
+	{
+		return 0;
+	}
+	else
+	{
+		return mRoot->evaluateAt(key);
+	}
+}
+
+/////////////////////////////////////////////////////
+//////////       Node Public           //////////////
+/////////////////////////////////////////////////////
+
+BST::Node::Node(int key, string data)
+{
+	mLeft = mRight = 0;
+	mKey = key;
+	mData = data;
+	mValue = 0;
+}
+
+void BST::Node::add(int key, string data)
+{
+	if (key < mKey)
+	{
+		if (mLeft == 0) mLeft = new Node(key, data);
+		else return mLeft->add(key, data);
+	}
+	else
+	{
+		if (mRight == 0) mRight = new Node(key, data);
+		else mRight->add(key, data);
+	}
+}
+
+bool BST::Node::isPresent(int key) const
+{
+	if (key == this->mKey)
+		return true;
+	else if (key < this->mKey) {
+		if (mLeft == NULL)
+			return false;
+		else
+			return mLeft->isPresent(key);
+	}
+	else if (key > this->mKey) {
+		if (mRight == NULL)
+			return false;
+		else
+			return mRight->isPresent(key);
+	}
+	return false;
+}
+/*
+void BST::Node::getTraversal(TraversalOrder order, vector<string> &answer) const
+{
+	//Murglo method
+	if (order == PREORDER) answer.push_back(mData);
+	mLeft->getTraversal(order, answer);
+	if (order == INORDER) answer.push_back(mData);
+	mRight->getTraversal(order, answer);
+	if (order == POSTORDER) answer.push_back(mData);
+}
+*/
+
+void BST::Node::getTraversal(TraversalOrder order, vector<string> &answer, Node *current) const
+{
+	if (order == PREORDER)
+	{
+		if (current == NULL) return;
+		answer.push_back(current->mData);
+		getTraversal(order, answer, current->mLeft);
+		getTraversal(order, answer, current->mRight);
+	}
+	else if (order == INORDER)
+	{
+		if (current == NULL) return;
+		getTraversal(order, answer, current->mLeft);
+		answer.push_back(current->mData);
+		getTraversal(order, answer, current->mRight);
+	}
+	else
+	{
+		if (current == NULL) return;
+		getTraversal(order, answer, current->mLeft);
+		getTraversal(order, answer, current->mRight);
+		answer.push_back(current->mData);
+	}
+}
+
+double BST::Node::evaluate(Node *root)
+{
+	if (root == NULL)
+	{
+		return 0;
+	}
+	if (!root->mLeft && !root->mRight)
+	{
+		return stoi(root->mData);
 	}
 
-	Node *find(int key);  // Delete if you don't want it.
-	Node *mRoot;		  // MUST use this
+	double lVal = evaluate(root->mLeft);
+	double rVal = evaluate(root->mRight);
 
-};
+	if (root->mData == "+") return lVal + rVal;
+	if (root->mData == "-") return lVal - rVal;
+	if (root->mData == "*") return lVal * rVal;
+	if (root->mData == "/") return lVal / rVal;
+}
 
-#endif
+double BST::Node::evaluateAt(int key)
+{
+	if (key == this->mKey)
+		return evaluate(this);
+	else if (key < this->mKey) {
+		if (mLeft == NULL)
+			return false;
+		else
+			return mLeft->evaluateAt(key);
+	}
+	else if (key > this->mKey) {
+		if (mRight == NULL)
+			return false;
+		else
+			return mRight->evaluateAt(key);
+	}
+	return false;
+
+}
+
+BST::Node* BST::find(int key) const
+{
+	Node *current = mRoot;
+
+	while (current != NULL)
+	{
+		if (key == current->mKey) return current;
+		else if (key < current->mKey) return current->mLeft;
+		else current = current->mRight;
+	}
+	return NULL;
+}
