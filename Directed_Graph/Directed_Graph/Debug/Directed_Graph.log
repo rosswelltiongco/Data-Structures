@@ -1,4 +1,9 @@
 ﻿  graph.cpp
-c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(65): warning C4018: '<': signed/unsigned mismatch
-c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(80): warning C4018: '<': signed/unsigned mismatch
-  Directed_Graph.vcxproj -> C:\Users\Rosswell\Documents\Data-Structures\Directed_Graph\Debug\Directed_Graph.exe
+c:\users\tiongco\documents\data-structures\directed_graph\directed_graph\graph.cpp(29): warning C4018: '<': signed/unsigned mismatch
+c:\users\tiongco\documents\data-structures\directed_graph\directed_graph\graph.cpp(36): warning C4018: '<': signed/unsigned mismatch
+c:\users\tiongco\documents\data-structures\directed_graph\directed_graph\graph.cpp(82): warning C4018: '<': signed/unsigned mismatch
+c:\users\tiongco\documents\data-structures\directed_graph\directed_graph\graph.cpp(91): warning C4018: '<': signed/unsigned mismatch
+c:\users\tiongco\documents\data-structures\directed_graph\directed_graph\graph.cpp(104): warning C4018: '<': signed/unsigned mismatch
+c:\users\tiongco\documents\data-structures\directed_graph\directed_graph\graph.cpp(99): warning C4715: 'Graph::find': not all control paths return a value
+  Directed_Graph.vcxproj -> C:\Users\Tiongco\Documents\Data-Structures\Directed_Graph\Debug\Directed_Graph.exe
+  Directed_Graph.vcxproj -> C:\Users\Tiongco\Documents\Data-Structures\Directed_Graph\Debug\Directed_Graph.pdb (Partial PDB)

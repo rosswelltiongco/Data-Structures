@@ -1,5 +1,6 @@
 #include "graph.h"
 #include <algorithm>
+#include <iostream>
 
 ////////////////////////////////////
 //      Public Methods            //
@@ -12,16 +13,32 @@ Graph::Graph()
 
 void Graph::addEdge(int from, int to)
 {
-	//calls method
-
+	//If empty, make the first node and add to list
+	if (mNodes.size() == 0)
+	{
+		Node *firstNode = new Node(from);
+		mNodes.push_back(firstNode);
+	}
+	//else if not empty, add
+	else
+	{
+		Node* vertex = find(from);
+		vertex->addEdge(find(to));
+	}
 }
 void Graph::outputNodes() const
 {
-	//calls method
+	for (int i = 0; i < mNodes.size(); i++)
+	{
+	cout << mNodes.at(i)->mNodeNumber;
+	}
 }
 void Graph::outputEdges() const
 {
-	//calls method
+	for (int i = 0; i < mNodes.size(); i++)
+	{
+		cout << mNodes.at(i)->mNodeNumber;
+	}
 }
 void Graph::DFS(int nodeNumberFrom)
 {
@@ -58,6 +75,7 @@ bool Graph::Node::isAdjTo(int to)
 {
 	//if (std::find(this->mAdjList.begin(),this->mAdjList.end(), to)) return true;
 	//std::find(this->mAdjList.begin(), this->mAdjList.end(), to);
+	//if (mAdjList)
 	return false;
 }
 
@@ -71,8 +89,15 @@ void Graph::markAllUnvisited()
 
 Graph::Node * Graph::find(int nodeNumber) const
 {
-	Node * lel = new Node(5);
-	return lel;
+	//Logic: Iterate through node list, if the node's number matches what we're looking for, return him
+	for (int i = 0; i < mNodes.size(); i++)
+	{
+		if (mNodes.at(i)->mNodeNumber == nodeNumber)
+		{
+			return mNodes.at(i);
+		}
+	}
+
 }
 
 vector<int> Graph::getNodeNumbers() const

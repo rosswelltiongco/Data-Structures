@@ -10,10 +10,10 @@ public:
 
 	Graph();
 
-	void addEdge(int from, int to);
-	void outputNodes() const;
-	void outputEdges() const;
-	void DFS(int nodeNumberFrom);
+	void addEdge(int from, int to);  //calls node addedge
+	void outputNodes() const;   //prints edges
+	void outputEdges() const;   //prints edges
+	void DFS(int nodeNumberFrom); //do later
 
 private:
 
@@ -24,13 +24,13 @@ private:
 
 	public:
 		Node(int nodeNumber);
-		void addEdge(Node *to);
-		void DFS();
-		bool isAdjTo(int to);
+		void addEdge(Node *to); //adds to madjlist
+		void DFS();  //do later
+		bool isAdjTo(int to);  //checks madjlist
 
 	private:
 		int mNodeNumber;
-		vector<Node *> mAdjList;
+		vector<Node *> mAdjList;  
 		bool mVisited;
 	};
 
