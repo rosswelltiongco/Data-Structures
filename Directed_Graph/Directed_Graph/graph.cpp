@@ -3,6 +3,9 @@
 #include <algorithm>
 #include <iostream>
 
+static const string DISCONNECT = "Causes disconnected graph";
+static const string REDUNDANT = "Vertex is already adjacent";
+
 ////////////////////////////////////
 //      Public Methods            //
 ////////////////////////////////////
@@ -14,11 +17,19 @@ Graph::Graph()
 
 void Graph::addEdge(int from, int to)
 {
+
 	//If graph is empty, make 'from' node
 	if (mNodes.size() == 0)
 	{
 		Node *firstNode = new Node(from);
 		mNodes.push_back(firstNode);
+	}
+
+	//Exception handling to check for nonexistant from node
+	//If from doens't exist, AND graph already has nodes, throw an error
+	else if (std::find(mNodes.begin(), mNodes.end(), find(from)) == mNodes.end())
+	{
+		throw DISCONNECT;
 	}
 
 	//If to node doesn't already exist, make it before adding a bridge
@@ -28,9 +39,16 @@ void Graph::addEdge(int from, int to)
 		mNodes.push_back(toNode);
 	}
 
-	//Add edge between nodes
-	Node* vertex = find(from);
-	vertex->addEdge(find(to));
+	//Adds edge between nodes if there is not already a connection
+	if (find(from)->isAdjTo(to))
+	{
+		throw REDUNDANT;
+	}
+	else
+	{
+		Node* vertex = find(from);
+		vertex->addEdge(find(to));
+	}
 }
 void Graph::outputNodes() const
 {

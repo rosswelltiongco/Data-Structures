@@ -35,7 +35,6 @@ void main()
 	doDfs(g, 1);
 	doDfs(g, 3);
 	doDfs(g, 5);
-	/*
 	try
 	{
 		g.addEdge(9, 1);
@@ -53,7 +52,6 @@ void main()
 	{
 		cout << "Adding edge (3,1) yields: " << s.c_str() << endl;
 	}
-	*/
 
 	char a; cout << "Pause: "; cin >> a;
 }
