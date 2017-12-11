@@ -1,3 +1,4 @@
+//Rosswell Tiongco, Assignment: #10, 016091762
 #include "graph.h"
 #include <algorithm>
 #include <iostream>
@@ -13,56 +14,54 @@ Graph::Graph()
 
 void Graph::addEdge(int from, int to)
 {
-	//If empty, make the first node and add to list
+	//If graph is empty, make 'from' node
 	if (mNodes.size() == 0)
 	{
 		Node *firstNode = new Node(from);
 		mNodes.push_back(firstNode);
 	}
-	//else if not empty, add
-	else
+
+	//If to node doesn't already exist, make it before adding a bridge
+	if (std::find(mNodes.begin(), mNodes.end(), find(to)) == mNodes.end())
 	{
-		Node* vertex = find(from);
-		vertex->addEdge(find(to));
+		Node *toNode = new Node(to);
+		mNodes.push_back(toNode);
 	}
+
+	//Add edge between nodes
+	Node* vertex = find(from);
+	vertex->addEdge(find(to));
 }
 void Graph::outputNodes() const
 {
+	cout << "Vertices: ";
+
 	for (int i = 0; i < mNodes.size(); i++)
 	{
-	cout << mNodes.at(i)->mNodeNumber;
+		cout << mNodes.at(i)->mNodeNumber << " ";
 	}
+	
+	cout << endl;
 }
 void Graph::outputEdges() const
 {
+	cout << "Edges:" << endl;
+
+	//Iterating through all nodes
 	for (int i = 0; i < mNodes.size(); i++)
 	{
-		cout << mNodes.at(i)->mNodeNumber;
+		//Iterating through each nodes' adjacency list
+		for (int j = 0; j < (mNodes.at(i)->mAdjList).size(); j++)
+		{
+			cout << "(" << mNodes.at(i)->mNodeNumber << "," << mNodes.at(i)->mAdjList.at(j)->mNodeNumber << ") ";
+		}
+		cout << endl; //Separation between each set of connections
 	}
+	cout << endl; //Separation after all connections
 }
 void Graph::DFS(int nodeNumberFrom)
 {
 	//call method
-}
-
-////////////////////////////////////
-//     Node Public Methods        //
-////////////////////////////////////
-Graph::Node::Node(int nodeNumber)
-{
-	mNodeNumber = nodeNumber;
-	mVisited = false;
-}
-
-void Graph::Node::addEdge(Node *to)
-{
-	//if graph is empty, its okay if first node doesn't exist
-	//if not empty, from node must exist, else throw an error
-	mAdjList.push_back(to);
-}
-
-void Graph::Node::DFS()
-{
 	/*
 	mark all unvisited
 	check if node has been visited, return, if not change mvisited
@@ -71,11 +70,34 @@ void Graph::Node::DFS()
 	*/
 }
 
+////////////////////////////////////
+//     Node Public Methods        //
+////////////////////////////////////
+Graph::Node::Node(int nodeNumber)
+{
+	mNodeNumber = nodeNumber;
+	mVisited = true;
+}
+
+void Graph::Node::addEdge(Node *to)
+{
+	mAdjList.push_back(to);
+}
+
+void Graph::Node::DFS()
+{
+
+}
+
 bool Graph::Node::isAdjTo(int to)
 {
-	//if (std::find(this->mAdjList.begin(),this->mAdjList.end(), to)) return true;
-	//std::find(this->mAdjList.begin(), this->mAdjList.end(), to);
-	//if (mAdjList)
+	for (int i = 0; i < mAdjList.size(); i++)
+	{
+		if (mAdjList.at(i)->mNodeNumber == to)
+		{
+			return true;
+		}
+	}
 	return false;
 }
 
@@ -89,7 +111,6 @@ void Graph::markAllUnvisited()
 
 Graph::Node * Graph::find(int nodeNumber) const
 {
-	//Logic: Iterate through node list, if the node's number matches what we're looking for, return him
 	for (int i = 0; i < mNodes.size(); i++)
 	{
 		if (mNodes.at(i)->mNodeNumber == nodeNumber)

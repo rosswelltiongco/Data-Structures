@@ -14,8 +14,8 @@ void main()
 {
 	Graph g;
 
+
 	g.addEdge(1, 2);
-	/*
 	g.addEdge(1, 3);
 	g.addEdge(1, 4);
 	g.addEdge(1, 5);
@@ -35,7 +35,7 @@ void main()
 	doDfs(g, 1);
 	doDfs(g, 3);
 	doDfs(g, 5);
-	*/
+	/*
 	try
 	{
 		g.addEdge(9, 1);
@@ -53,6 +53,7 @@ void main()
 	{
 		cout << "Adding edge (3,1) yields: " << s.c_str() << endl;
 	}
-	g.outputNodes();
+	*/
+
 	char a; cout << "Pause: "; cin >> a;
 }

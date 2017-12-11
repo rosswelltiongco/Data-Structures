@@ -1,3 +1,4 @@
+//Rosswell Tiongco, Assignment: #10, 016091762
 #ifndef GRAPH_H
 #define GRAPH_H
 
@@ -10,10 +11,10 @@ public:
 
 	Graph();
 
-	void addEdge(int from, int to);  //calls node addedge
-	void outputNodes() const;   //prints edges
-	void outputEdges() const;   //prints edges
-	void DFS(int nodeNumberFrom); //do later
+	void addEdge(int from, int to);
+	void outputNodes() const;
+	void outputEdges() const;
+	void DFS(int nodeNumberFrom);
 
 private:
 
@@ -24,9 +25,9 @@ private:
 
 	public:
 		Node(int nodeNumber);
-		void addEdge(Node *to); //adds to madjlist
-		void DFS();  //do later
-		bool isAdjTo(int to);  //checks madjlist
+		void addEdge(Node *to);
+		void DFS();
+		bool isAdjTo(int to);
 
 	private:
 		int mNodeNumber;
