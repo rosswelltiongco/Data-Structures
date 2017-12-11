@@ -79,13 +79,8 @@ void Graph::outputEdges() const
 }
 void Graph::DFS(int nodeNumberFrom)
 {
-	//call method
-	/*
-	mark all unvisited
-	check if node has been visited, return, if not change mvisited
-	output node visited
-	if node adjlist is empty,
-	*/
+	markAllUnvisited();
+	find(nodeNumberFrom)->DFS();
 }
 
 ////////////////////////////////////
@@ -94,7 +89,7 @@ void Graph::DFS(int nodeNumberFrom)
 Graph::Node::Node(int nodeNumber)
 {
 	mNodeNumber = nodeNumber;
-	mVisited = true;
+	mVisited = false;
 }
 
 void Graph::Node::addEdge(Node *to)
@@ -104,7 +99,21 @@ void Graph::Node::addEdge(Node *to)
 
 void Graph::Node::DFS()
 {
+	//Mark and print the node as visited
+	mVisited = true;
+	cout << mNodeNumber << " ";
 
+	//Iterate through each adjacent node
+	for (int i = 0; i < mAdjList.size(); i++)
+	{
+		//If the adjacent node hasn't been visited, DFS/visit it
+		bool visited = mAdjList.at(i)->mVisited;
+		if (!visited)
+		{
+			//DO NOT just call DFS, call DFS from the new node
+			mAdjList.at(i)->DFS();
+		}
+	}
 }
 
 bool Graph::Node::isAdjTo(int to)
