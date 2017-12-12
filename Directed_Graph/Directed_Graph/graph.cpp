@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <iostream>
 
+//Throw strings
 static const string DISCONNECT = "Causes disconnected graph";
 static const string REDUNDANT = "Vertex is already adjacent";
 
@@ -25,7 +26,7 @@ void Graph::addEdge(int from, int to)
 		mNodes.push_back(firstNode);
 	}
 
-	//Exception handling to check for nonexistant from node
+	//Exception handling to check for nonexistant "from" node
 	//If from doens't exist, AND graph already has nodes, throw an error
 	else if (std::find(mNodes.begin(), mNodes.end(), find(from)) == mNodes.end())
 	{
@@ -50,10 +51,12 @@ void Graph::addEdge(int from, int to)
 		vertex->addEdge(find(to));
 	}
 }
+
 void Graph::outputNodes() const
 {
 	cout << "Vertices: ";
 
+	//Iterating through each node and displaying nodes' number
 	for (int i = 0; i < mNodes.size(); i++)
 	{
 		cout << mNodes.at(i)->mNodeNumber << " ";
@@ -61,6 +64,7 @@ void Graph::outputNodes() const
 	
 	cout << endl;
 }
+
 void Graph::outputEdges() const
 {
 	cout << "Edges:" << endl;
@@ -77,8 +81,10 @@ void Graph::outputEdges() const
 	}
 	cout << endl; //Separation after all connections
 }
+
 void Graph::DFS(int nodeNumberFrom)
 {
+	//Mark all nodes as unvisited and call recursive helper function
 	markAllUnvisited();
 	find(nodeNumberFrom)->DFS();
 }
@@ -112,6 +118,7 @@ void Graph::Node::DFS()
 		{
 			//DO NOT just call DFS, call DFS from the new node
 			mAdjList.at(i)->DFS();
+			//NOT JUST DFS()
 		}
 	}
 }
@@ -145,7 +152,6 @@ Graph::Node * Graph::find(int nodeNumber) const
 			return mNodes.at(i);
 		}
 	}
-
 }
 
 vector<int> Graph::getNodeNumbers() const
