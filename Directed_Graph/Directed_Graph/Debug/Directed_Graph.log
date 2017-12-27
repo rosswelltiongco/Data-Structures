@@ -1,11 +1,13 @@
-﻿  graph.cpp
-c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(60): warning C4018: '<': signed/unsigned mismatch
-c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(73): warning C4018: '<': signed/unsigned mismatch
-c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(76): warning C4018: '<': signed/unsigned mismatch
-c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(113): warning C4018: '<': signed/unsigned mismatch
-c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(128): warning C4018: '<': signed/unsigned mismatch
-c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(140): warning C4018: '<': signed/unsigned mismatch
-c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(148): warning C4018: '<': signed/unsigned mismatch
-c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(160): warning C4018: '<': signed/unsigned mismatch
-c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(155): warning C4715: 'Graph::find': not all control paths return a value
+﻿  main.cpp
+  graph.cpp
+c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(59): warning C4018: '<': signed/unsigned mismatch
+c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(72): warning C4018: '<': signed/unsigned mismatch
+c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(75): warning C4018: '<': signed/unsigned mismatch
+c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(112): warning C4018: '<': signed/unsigned mismatch
+c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(127): warning C4018: '<': signed/unsigned mismatch
+c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(139): warning C4018: '<': signed/unsigned mismatch
+c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(147): warning C4018: '<': signed/unsigned mismatch
+c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(159): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+c:\users\rosswell\documents\data-structures\directed_graph\directed_graph\graph.cpp(154): warning C4715: 'Graph::find': not all control paths return a value
   Directed_Graph.vcxproj -> C:\Users\Rosswell\Documents\Data-Structures\Directed_Graph\Debug\Directed_Graph.exe

@@ -1,4 +1,3 @@
-//Rosswell Tiongco, ID: 016091762, Assignment #6
 #ifndef STACK_H
 #define STACK_H
 

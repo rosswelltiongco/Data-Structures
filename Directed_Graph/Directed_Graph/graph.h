@@ -1,4 +1,3 @@
-//Rosswell Tiongco, Assignment: #10, 016091762
 #ifndef GRAPH_H
 #define GRAPH_H
 

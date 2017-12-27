@@ -1,5 +1,3 @@
-// Rosswell Tiongco, 016091762, Assignment #9
-
 #include "bst.h"
 #include <iostream>
 #include <string>

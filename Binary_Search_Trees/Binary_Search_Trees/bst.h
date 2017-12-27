@@ -1,4 +1,3 @@
-// Rosswell Tiongco, 016091762, Assignment #9
 #ifndef BST_H
 #define BST_H
 

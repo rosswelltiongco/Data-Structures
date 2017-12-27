@@ -1,5 +1,3 @@
-//Rosswell Tiongco, Assignment 8, 016091762
-
 #include <iostream>
 #include "utility.h"
 #include "stack.h"

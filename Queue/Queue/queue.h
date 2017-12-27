@@ -1,4 +1,3 @@
-//Rosswell Tiongco, ID: 016091762, Assignment #6
 #ifndef QUEUE_H
 #define QUEUE_H
 

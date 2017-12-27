@@ -1,2 +1,6 @@
 ﻿  utility.cpp
+  stack.cpp
+  main.cpp
+  Generating Code...
+  LINK : C:\Users\Rosswell\Documents\Data-Structures\Recursion\Debug\Recursion.exe not found or not built by the last incremental link; performing full link
   Recursion.vcxproj -> C:\Users\Rosswell\Documents\Data-Structures\Recursion\Debug\Recursion.exe

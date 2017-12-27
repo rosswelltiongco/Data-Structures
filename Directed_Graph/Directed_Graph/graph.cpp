@@ -1,4 +1,3 @@
-//Rosswell Tiongco, Assignment: #10, 016091762
 #include "graph.h"
 #include <algorithm>
 #include <iostream>
